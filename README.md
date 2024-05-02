@@ -1,5 +1,5 @@
 # PPPwn - PlayStation 4 PPPoE RCE
-PPPwn is a kernel remote code execution exploit for PlayStation 4 upto FW 11.00. This is a proof-of-concept exploit for [CVE-2006-4304](https://hackerone.com/reports/2177925) that was reported responsibly to PlayStation.
+PPPwn is a kernel remote code execution exploit for PlayStation 4 up to FW 11.00. This is a proof-of-concept exploit for [CVE-2006-4304](https://hackerone.com/reports/2177925) that was reported responsibly to PlayStation.
 
 Supported versions are:
 - FW 9.00
@@ -10,14 +10,14 @@ Supported versions are:
 - FW 11.00
 - more can be added (PRs are welcome)
 
-The exploit only prints `PPPwned` on your PS4 as a proof-of-concept. In order to launch Mira or similar homebrew enablers, the `stage2.bin` payload needs to be adapted.
+The exploit only prints `PPPwned` on your PS4 as a proof-of-concept. To launch Mira or similar homebrew enablers, the `stage2.bin` payload needs to be adapted.
 
 ## Requirements
 - Computer with Ethernet port
   - USB adapter also works
 - Ethernet cable
 - Linux
-  - You can use VirtualBox to create a Linux VM with `Bridged Adapter` as network adapter to use the ethernet port in the VM.
+  - You can use VirtualBox to create a Linux VM with `Bridged Adapter` as a network adapter to use the ethernet port in the VM.
 - Python3 and gcc installed
 
 ## Usage
@@ -56,7 +56,7 @@ On your PS4:
 - Go to `Settings` and then `Network`
 - Select `Set Up Internet connection` and choose `Use a LAN Cable`
 - Choose `Custom` setup and choose `PPPoE` for `IP Address Settings`
-- Enter anything for `PPPoE User ID` and `PPPoE Password`
+- Enter anything for `PPPoE User ID` and `PPPoE Pasword`
 - Choose `Automatic` for `DNS Settings` and `MTU Settings`
 - Choose `Do Not Use` for `Proxy Server`
 - Click `Test Internet Connection` to communicate with your computer
@@ -153,5 +153,5 @@ If the exploit works, you should see an output similar to below, and you should 
 ## Notes for Mac Apple Silicon Users (arm64 / aarch64)
 The code will not compile on Apple Silicon and requires amd64 architecture. 
 There is a workaround using docker which will build the bin files required.
-Clone this repository to your mac system, then from the repo folder run `./build-macarm.sh`.This will build the binaries for PS4 FW 1100 and place the necessary files into the correct folders. To build the binaries for a different version, i.e. 900, run the command as such: `./build-macarm.sh 900`. Once built, copy this folder structure into the Linux VM and execute as instructed above. 
+Clone this repository to your Mac system, then from the repo folder run `./build-macarm.sh`.This will build the binaries for PS4 FW 1100 and place the necessary files into the correct folders. To build the binaries for a different version, i.e. 900, run the command as such: `./build-macarm.sh 900`. Once built, copy this folder structure into the Linux VM and execute as instructed above. 
 This has been tested using VMware Fusion 13.5.1, with the VM Guest as Ubuntu 24.04, and the host machine is MacOS 14.4.1
