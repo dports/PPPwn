@@ -30,7 +30,7 @@ jobs:
 
       - name: Build firmware for each version
         run: |
-          for FW_VERSION in 900 903 904 950 960 1000 1001 1050 1070 1071 1100; do
+          for FW_VERSION in 850 900 903 904 950 960 1000 1001 1050 1070 1071 1100; do
             make FW=$FW_VERSION clean && make FW=$FW_VERSION all
             make -C stage1 FW=$FW_VERSION clean && make -C stage1 FW=$FW_VERSION
             make -C stage2 FW=$FW_VERSION clean && make -C stage2 FW=$FW_VERSION
